@@ -7,10 +7,19 @@ import com.kotlin1.fileTwo.food
 
 
 fun main(args: Array<String>) {
-    val day : String = randomDay()
-    val fishfood :String = food(day)
-    val change : Boolean = waterChange(32,day,34)
+   val a = listOf("am","sm","dm","an","Sn","dn")
 
-    return println("ON $day fish are fed $fishfood\n waterchange $change" )
 
+
+    val b = a.asSequence().map {
+        println("b: $it")
+        it
+    }
+
+   //println("first : ${b.first()}")
+    // here the sequence evaluates all elements until the terminal operation (first) and in the process of evaluation
+    // we havc placed a println statement in the map thus is is being executed
+
+    println("all : ${b.toList()}")
+    // here all the elements are evaluated as there is no terminal operation give hence all of them are printed
 }
